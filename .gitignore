@@ -3,5 +3,5 @@ __pycache__/
 data/raw/
 data/reads/
 sratoolkit*/
-results*.csv
-report/
+/results*.csv
+/report/

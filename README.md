@@ -40,6 +40,17 @@ report.py              markdown table + memory-vs-reads chart          -> report
 
 Settings: Accelerator **GPU T4** (one is enough), **Internet on**.
 
+**One-shot:** `bash kaggle_run.sh` runs everything below: sratoolkit, deps, a synthetic
+full-grid profile, then a small real-data profile on batch `SRR413` (10 runs × 5000
+spots, 512 reads/sample, reads ∈ {64..512}), and both reports.
+
+```bash
+!git clone https://github.com/sabasiddique1/metagenbert-memprofile.git
+!cd metagenbert-memprofile && bash kaggle_run.sh
+```
+
+Or step by step:
+
 ```bash
 # 1. Python deps (torch is preinstalled on Kaggle with CUDA; don't reinstall it)
 grep -v '^torch' requirements.txt > /tmp/req.txt && pip install -q -r /tmp/req.txt
